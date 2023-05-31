@@ -1,0 +1,33 @@
+<div>
+    <h1>Products Page</h1>
+    <hr>
+    <table class="table table-striped table-bordered" style="width: 100%" >
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+        {{#each products}}
+            <tr>
+                <td>{{ this.title }}</td>
+                <td>{{ this.description }}</td>
+                <td>{{ this.price }}</td>
+                <td>{{ this.stock }}</td>
+            </tr>
+        {{/each}}
+    </table>
+
+    <hr>
+
+    {{#if hasPrevPage}}
+        <a href="products/?page={{prevPage}}"><button>Previous</button></a>
+    {{/if}}
+
+    {{#if hasNextPage}}
+        <a href="products/?page={{nextPage}}"><button>Next</button></a>
+    {{/if}}
+
+    <a href="/profile"><button>Profile</button></a>
+    <a href="/api/session/logout"><button>Logout</button></a>
+</div>
